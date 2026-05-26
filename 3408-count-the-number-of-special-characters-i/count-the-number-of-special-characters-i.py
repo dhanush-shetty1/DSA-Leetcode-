@@ -1,7 +1,7 @@
 class Solution:
     def numberOfSpecialChars(self, word: str) -> int:
-        lower = set()
-        upper = set()
+        lower=set()
+        upper=set()
 
         for ch in word:
             if ch.islower():
@@ -9,10 +9,10 @@ class Solution:
             else:
                 upper.add(ch)
 
-        count = 0
+        count=0
 
         for ch in lower:
             if ch.upper() in upper:
-                count += 1
-
+                count+=1
+            
         return count
