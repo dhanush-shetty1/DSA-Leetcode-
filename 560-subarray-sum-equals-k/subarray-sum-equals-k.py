@@ -6,7 +6,6 @@ class Solution:
         mp[0]=1
         curr_sum=0
         count=0
-
         for num in nums:
             curr_sum+=num
             count+=mp[curr_sum-k]
