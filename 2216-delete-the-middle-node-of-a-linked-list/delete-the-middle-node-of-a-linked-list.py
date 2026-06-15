@@ -8,19 +8,20 @@ class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
             return None
+        
+        count=0
+        curr=head
 
-        curr = head
-        count = 0
         while curr:
-            count += 1
-            curr = curr.next
+            count+=1
+            curr=curr.next
+        
+        n=(count//2)-1
+        curr=head
 
-        n = count // 2 - 1
-
-        curr = head
-        for _ in range(n):
-            curr = curr.next
-
-        curr.next = curr.next.next
+        for i in range(n):
+            curr=curr.next
+        
+        curr.next=curr.next.next
 
         return head
