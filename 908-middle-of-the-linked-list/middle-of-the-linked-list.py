@@ -6,18 +6,16 @@
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        count = 0
-        curr = head
+        count=0
+        curr=head
 
         while curr:
-            count += 1
-            curr = curr.next
-
-        n = count // 2
-
-        curr = head
-
+            count+=1
+            curr=curr.next
+        
+        n=count//2
+        curr=head
         for _ in range(n):
-            curr = curr.next
-
+            curr=curr.next
+        
         return curr
