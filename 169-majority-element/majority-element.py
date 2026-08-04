@@ -1,15 +1,16 @@
-from collections import defaultdict
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        max_e=0
-        result=0
-        hashmap=defaultdict(int)
+        count = 0
+        candidate = None
 
         for num in nums:
-            hashmap[num]+=1
-        for num in nums:
-            if hashmap[num]>max_e:
-                max_e=hashmap[num]
-                result=num
-        return result
-        
+
+            if count == 0:
+                candidate = num
+
+            if num == candidate:
+                count += 1
+            else:
+                count -= 1
+
+        return candidate
