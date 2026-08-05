@@ -10,7 +10,7 @@ class Solution:
                 left+=1
             
             seen.add(s[right])
-            maxl=max(maxl,right-left+1)
+            maxl=max(maxl,len(seen))
         return maxl
             
 
