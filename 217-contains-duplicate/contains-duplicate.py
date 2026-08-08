@@ -4,11 +4,11 @@ class Solution:
         hashmap=defaultdict(int)
 
         for num in nums:
-            if num not in hashmap:
-                hashmap[num]+=1
-            else:
+            if num in hashmap:
                 return True
+            hashmap[num]+=1
         
         return False
+        
         
         
