@@ -8,16 +8,9 @@ class Solution:
     def invertTree(self, root: TreeNode | None) -> TreeNode | None:
         if not root:
             return None
-        ans=[]
-        q=deque([root])
-        
-        while len(q)!=0:
-            node=q.popleft()
-            node.right,node.left=node.left,node.right
+        root.left,root.right=root.right,root.left
 
-            if node.right:
-                q.append(node.right)
-            if node.left:
-                q.append(node.left)
-            
+        self.invertTree(root.right)
+        self.invertTree(root.left)
+
         return root
